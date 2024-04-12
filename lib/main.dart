@@ -16,6 +16,7 @@ class MainApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => BmiViewModel(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         initialRoute: '/',
         routes: routes,
       ),
