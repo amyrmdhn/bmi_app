@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:bmi_app/helper.dart';
 import '../widgets/bmi_toggle_switch.dart';
 import '../../view_model/bmi_view_model.dart';
+import '../widgets/card_number_picker.dart';
 
 class BmiCalculateScreen extends StatefulWidget {
   const BmiCalculateScreen({super.key});
@@ -31,6 +32,27 @@ class _BmiCalculateScreenState extends State<BmiCalculateScreen> {
                 );
               },
               selector: (context, viewModel) => viewModel.isFemale,
+            ),
+            const Spacer(),
+            //* Height number picker card
+            Selector<BmiViewModel, int>(
+              builder: (context, height, child) {
+                return CardNumberPicker(
+                  currentValue: height,
+                  onSelectPicker: (height) =>
+                      context.read<BmiViewModel>().setHeight(height),
+                  onDecrementNumber: () =>
+                      context.read<BmiViewModel>().decrement(),
+                  onIncrementNumber: () =>
+                      context.read<BmiViewModel>().increment(),
+                  titleText: 'Height',
+                  unitText: '(in cm)',
+                  widthScale: 0.19,
+                  itemCount: 5,
+                  hasRuler: true,
+                );
+              },
+              selector: (context, viewModel) => viewModel.height,
             ),
             const Spacer(),
           ],
