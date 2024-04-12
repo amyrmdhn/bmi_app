@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tuple_dart/tuple.dart';
 
 import 'package:bmi_app/helper.dart';
-import 'package:tuple_dart/tuple.dart';
 import '../widgets/bmi_toggle_switch.dart';
-import '../../view_model/bmi_view_model.dart';
+import '../widgets/calculate_button.dart';
 import '../widgets/card_number_picker.dart';
+import '../../view_model/bmi_view_model.dart';
 
 class BmiCalculateScreen extends StatefulWidget {
   const BmiCalculateScreen({super.key});
@@ -98,6 +99,12 @@ class _BmiCalculateScreenState extends State<BmiCalculateScreen> {
                   Tuple2(viewModel.weight, viewModel.age),
             ),
             const Spacer(),
+            //* Button for calculate
+            CalculateButton(
+              onPressed: () {},
+              icon: Icons.arrow_right_alt,
+              text: 'Calculate',
+            )
           ],
         ),
       ),
