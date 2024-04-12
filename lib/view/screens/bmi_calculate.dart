@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:bmi_app/helper.dart';
+
 class BmiCalculateScreen extends StatefulWidget {
   const BmiCalculateScreen({super.key});
 
@@ -10,8 +12,9 @@ class BmiCalculateScreen extends StatefulWidget {
 class _BmiCalculateScreenState extends State<BmiCalculateScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: appBar,
+      body: const Center(
         child: Text('Initialization'),
       ),
     );

@@ -15,3 +15,8 @@ class AppRoute {
 final routes = {
   '/': (context) => const BmiCalculateScreen(),
 };
+
+final appBar = AppBar(
+  title: const Text('BMI Calculator'),
+  centerTitle: true,
+);
