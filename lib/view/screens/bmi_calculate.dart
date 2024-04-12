@@ -42,9 +42,9 @@ class _BmiCalculateScreenState extends State<BmiCalculateScreen> {
                   onSelectPicker: (height) =>
                       context.read<BmiViewModel>().setHeight(height),
                   onDecrementNumber: () =>
-                      context.read<BmiViewModel>().decrement(),
+                      context.read<BmiViewModel>().decrement(Value.height),
                   onIncrementNumber: () =>
-                      context.read<BmiViewModel>().increment(),
+                      context.read<BmiViewModel>().increment(Value.height),
                   titleText: 'Height',
                   unitText: '(in cm)',
                   widthScale: 0.19,

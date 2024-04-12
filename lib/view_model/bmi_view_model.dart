@@ -31,13 +31,23 @@ class BmiViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void increment() {
-    _height++;
+  void increment(Value value) {
+    if (value == Value.height) _height++;
+    if (value == Value.weight) _weight++;
+    if (value == Value.age) _age++;
     notifyListeners();
   }
 
-  void decrement() {
-    _height--;
+  void decrement(Value value) {
+    if (value == Value.height) _height--;
+    if (value == Value.weight) _weight--;
+    if (value == Value.age) _age--;
     notifyListeners();
   }
+}
+
+enum Value {
+  height,
+  weight,
+  age,
 }
