@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import '../model/bmi.dart';
 
 class BmiViewModel extends ChangeNotifier {
+  Bmi? person;
+
   var _isFemale = 1;
   var _height = 170;
   var _weight = 72;
