@@ -76,6 +76,17 @@ class BmiViewModel extends ChangeNotifier {
     if (ponderalIndex >= 11 && ponderalIndex <= 15) return 'Normal';
     return 'Underweight';
   }
+
+  String bmiRange(double bmi) {
+    if (bmi > 40) return 'more than 40';
+    if (bmi > 35 && bmi <= 40) return '35 - 40';
+    if (bmi > 30 && bmi <= 35) return '30 - 35';
+    if (bmi > 25 && bmi <= 30) return '25 - 30';
+    if (bmi > 18.5 && bmi <= 25) return '18.5 - 25';
+    if (bmi > 17 && bmi <= 18.5) return '17 - 18.5';
+    if (bmi >= 16 && bmi <= 17) return '16 - 17';
+    return 'less than 16';
+  }
 }
 
 enum Value {
