@@ -25,3 +25,4 @@ flutter:
 
   assets:
     - assets/images/ruler.svg
+    - assets/images/radial_scale.png

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/helper.dart';
+import '../widgets/bmi_progress_indicator.dart';
 import '../../view_model/bmi_view_model.dart';
 
 class BmiResultScreen extends StatelessWidget {
@@ -29,6 +30,12 @@ class BmiResultScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
+                //* Indicator BMI Result with Circle Visual
+                BMIProgressIndicator(
+                  size: size,
+                  bmi: viewModel.person!.bmi,
+                  duration: 1500,
+                ),
               ],
             );
           },
