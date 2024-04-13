@@ -47,6 +47,17 @@ class BmiViewModel extends ChangeNotifier {
     if (value == Value.age) _age--;
     notifyListeners();
   }
+
+  String bmiCategory(double bmi) {
+    if (bmi > 40) return 'Obese Class III';
+    if (bmi > 35 && bmi <= 40) return 'Obese Class II';
+    if (bmi > 30 && bmi <= 35) return 'Obese Class I';
+    if (bmi > 25 && bmi <= 30) return 'Overweight';
+    if (bmi > 18.5 && bmi <= 25) return 'Normal';
+    if (bmi > 17 && bmi <= 18.5) return 'Mild Thinness';
+    if (bmi >= 16 && bmi <= 17) return 'Moderate Thinness';
+    return 'Severe Thinness';
+  }
 }
 
 enum Value {
