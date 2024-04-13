@@ -1,8 +1,8 @@
-import 'package:bmi_app/view_model/bmi_view_model.dart';
 import 'package:flutter/material.dart';
-
-import 'package:bmi_app/helper.dart';
 import 'package:provider/provider.dart';
+
+import '/helper.dart';
+import '../view_model/bmi_view_model.dart';
 
 void main() {
   runApp(const MainApp());
@@ -17,6 +17,7 @@ class MainApp extends StatelessWidget {
       create: (context) => BmiViewModel(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        navigatorKey: AppRoute.navigatorKey,
         initialRoute: '/',
         routes: routes,
       ),
