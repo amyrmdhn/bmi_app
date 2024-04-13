@@ -69,6 +69,13 @@ class BmiViewModel extends ChangeNotifier {
     if (bmiPrime >= 0.64 && bmiPrime < 0.68) return 'Moderate Thinness';
     return 'Severe Thineess';
   }
+
+  String ponderalIndexCategory(double ponderalIndex) {
+    if (ponderalIndex > 17) return 'Obese';
+    if (ponderalIndex > 15 && ponderalIndex <= 17) return 'Overweight';
+    if (ponderalIndex >= 11 && ponderalIndex <= 15) return 'Normal';
+    return 'Underweight';
+  }
 }
 
 enum Value {
