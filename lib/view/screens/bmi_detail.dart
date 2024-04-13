@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/bmi_detail_content.dart';
 import '../widgets/bmi_detail_header.dart';
 import '../../view_model/bmi_view_model.dart';
 
@@ -32,11 +33,13 @@ class BmiDetailScreen extends StatelessWidget {
                     size: size,
                   ),
                   const SizedBox(height: 16),
+                  const BmiDetailContent(),
+                  const SizedBox(height: 16),
                 ],
               ),
             ),
           ),
-        );  
+        );
       }),
     );
   }
