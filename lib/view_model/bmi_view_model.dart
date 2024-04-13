@@ -126,6 +126,11 @@ class BmiViewModel extends ChangeNotifier {
 
     AppRoute.toReplace('/results');
   }
+
+  void recalculateBmi(BuildContext context) {
+    if (person != null) person = null;
+    AppRoute.toReplace('/');
+  }
 }
 
 enum Value {
