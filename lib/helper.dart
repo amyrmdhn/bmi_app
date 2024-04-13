@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'view/screens/bmi_calculate.dart';
+import 'view/screens/bmi_detail.dart';
+import 'view/screens/bmi_result.dart';
 
 class AppRoute {
   static final navigatorKey = GlobalKey<NavigatorState>();
@@ -14,6 +16,8 @@ class AppRoute {
 
 final routes = {
   '/': (context) => const BmiCalculateScreen(),
+  '/results': (context) => const BmiResultScreen(),
+  '/details': (context) => const BmiDetailScreen(),
 };
 
 final appBar = AppBar(
