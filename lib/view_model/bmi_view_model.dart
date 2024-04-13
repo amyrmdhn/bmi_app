@@ -1,4 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+
+import '../helper.dart';
 import '../model/bmi.dart';
 
 class BmiViewModel extends ChangeNotifier {
@@ -93,6 +97,34 @@ class BmiViewModel extends ChangeNotifier {
     if (ponderalIndex > 15 && ponderalIndex <= 17) return '15 - 17';
     if (ponderalIndex >= 11 && ponderalIndex <= 15) return '11 - 15';
     return '8 - 11';
+  }
+
+  void calculateBmi(BuildContext context) {
+    final bmi = weight / pow(_height / 100, 2);
+    final bmiPrime = bmi / 25;
+    final ponderalIndex = weight / pow(_height / 100, 3);
+    final bmiCategories = bmiCategory(bmi);
+    final bmiPrimeCategories = bmiPrimeCategory(bmiPrime);
+    final ponderalIndexCategories = ponderalIndexCategory(ponderalIndex);
+    final ponderalIndexRanges = ponderalIndexRange(ponderalIndex);
+    final bmiRanges = bmiRange(bmi);
+
+    person = Bmi(
+      isFemale: isFemale,
+      height: height,
+      weight: weight,
+      age: age,
+      bmi: bmi,
+      bmiCategories: bmiCategories,
+      bmiRange: bmiRanges,
+      bmiPrime: bmiPrime,
+      bmiPrimeCategories: bmiPrimeCategories,
+      ponderalIndex: ponderalIndex,
+      ponderalIndexCategories: ponderalIndexCategories,
+      ponderalIndexRange: ponderalIndexRanges,
+    );
+
+    AppRoute.toReplace('/results');
   }
 }
 
