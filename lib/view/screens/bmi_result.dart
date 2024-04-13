@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '/helper.dart';
 import '../widgets/bmi_progress_indicator.dart';
+import '../widgets/calculate_button.dart';
 import '../../view_model/bmi_view_model.dart';
 
 class BmiResultScreen extends StatelessWidget {
@@ -40,6 +41,14 @@ class BmiResultScreen extends StatelessWidget {
                 //* Button that functions to move to the details page
                 detailButton(),
                 const Spacer(flex: 2),
+                //* Recalculate Button to recalculate BMI
+                CalculateButton(
+                  onPressed: () {
+                    viewModel.recalculateBmi(context);
+                  },
+                  text: 'Recalculate',
+                  icon: Icons.restart_alt,
+                ),
               ],
             );
           },
