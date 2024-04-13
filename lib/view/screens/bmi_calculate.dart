@@ -101,7 +101,9 @@ class _BmiCalculateScreenState extends State<BmiCalculateScreen> {
             const Spacer(),
             //* Button for calculate
             CalculateButton(
-              onPressed: () {},
+              onPressed: () {
+                context.read<BmiViewModel>().calculateBmi(context);
+              },
               icon: Icons.arrow_right_alt,
               text: 'Calculate',
             )
