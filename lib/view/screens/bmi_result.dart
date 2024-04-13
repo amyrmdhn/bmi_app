@@ -36,10 +36,34 @@ class BmiResultScreen extends StatelessWidget {
                   bmi: viewModel.person!.bmi,
                   duration: 1500,
                 ),
+                const Spacer(flex: 2),
+                //* Button that functions to move to the details page
+                detailButton(),
+                const Spacer(flex: 2),
               ],
             );
           },
         ),
+      ),
+    );
+  }
+
+  SizedBox detailButton() {
+    return SizedBox(
+      width: 170,
+      height: 50,
+      child: ElevatedButton(
+        onPressed: () {
+          AppRoute.to('/details');
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xFFfb5253),
+          foregroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+        child: const Text('Details'),
       ),
     );
   }
